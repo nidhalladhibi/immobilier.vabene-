@@ -1,0 +1,63 @@
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .login-card {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Slide-in animation */
+  @keyframes slideInBottom {
+    from {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .slide-in-bottom {
+    animation: slideInBottom 0.5s ease-out;
+  }
+  
+  /* Input bounce effect */
+  @keyframes inputBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+  }
+  
+  .input-bounce:focus {
+    animation: inputBounce 0.3s linear;
+    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
+    border-color: rgba(81, 203, 238, 1);
+  }
+  
+  /* Button bounce effect */
+  @keyframes btnBounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(0.95); }
+  }
+  
+  .btn-bounce:active {
+    animation: btnBounce 0.2s linear;
+  }
+  
+  /* Error shake animation */
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+  }
+  
+  .shake-animation {
+    animation: shake 0.5s linear;
+  }
