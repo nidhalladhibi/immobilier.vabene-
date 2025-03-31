@@ -1,18 +1,21 @@
-/* Navbar.css */
+/* Navbar.css - Improved and consolidated version */
 .navbar {
   position: sticky;
   top: 0;
   left: 0;
   width: 100%;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease;
   z-index: 1000;
   height: 70px;
+  padding: 0 24px;
 }
 
 .navbar-scrolled {
   height: 60px;
+  background-color: rgba(255, 255, 255, 0.98);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
@@ -23,9 +26,9 @@
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 20px;
 }
 
+/* Logo styling */
 .navbar-brand {
   display: flex;
   align-items: center;
@@ -43,6 +46,7 @@
 
 .logo:hover {
   color: #3498db;
+  transform: scale(1.05);
 }
 
 .logo-icon {
@@ -50,6 +54,7 @@
   font-size: 24px;
 }
 
+/* Main menu styling */
 .navbar-menu {
   display: flex;
   align-items: center;
@@ -71,7 +76,7 @@
   text-decoration: none;
   color: #333;
   font-weight: 500;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.3s ease;
   position: relative;
 }
@@ -90,6 +95,8 @@
 
 .navbar-item:hover {
   color: #3498db;
+  background-color: rgba(245, 245, 245, 0.7);
+  transform: translateY(-2px);
 }
 
 .navbar-item:hover::after {
@@ -100,20 +107,30 @@
   margin-right: 8px;
 }
 
+/* Button styling */
 .logout-button {
-  background: none;
+  background-color: #ff4d4d;
+  color: white;
   border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
   cursor: pointer;
   font-size: 16px;
   display: flex;
   align-items: center;
+  transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+  background-color: #ff1a1a;
+  transform: scale(1.05);
 }
 
 .register-button {
   background-color: #3498db;
   color: white;
   padding: 8px 16px;
-  border-radius: 4px;
+  border-radius: 8px;
   transition: all 0.3s ease;
 }
 
@@ -130,11 +147,11 @@
 
 .user-profile {
   background-color: #f5f5f5;
-  border-radius: 4px;
+  border-radius: 8px;
   padding: 8px 12px;
 }
 
-/* Menu mobile */
+/* Mobile menu toggle */
 .mobile-menu-toggle {
   display: none;
   flex-direction: column;
@@ -142,6 +159,7 @@
   width: 30px;
   height: 21px;
   cursor: pointer;
+  z-index: 1001;
 }
 
 .mobile-menu-toggle span {
@@ -162,16 +180,17 @@
   .navbar-menu {
     position: fixed;
     top: 70px;
-    left: -100%;
+    right: -100%;
     width: 250px;
     height: calc(100vh - 70px);
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
     flex-direction: column;
     align-items: flex-start;
     padding: 20px;
     margin-left: 0;
-    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
-    transition: left 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+    transition: right 0.3s ease;
     overflow-y: auto;
   }
 
@@ -181,7 +200,7 @@
   }
 
   .navbar-menu.active {
-    left: 0;
+    right: 0;
   }
 
   .navbar-start, .navbar-end {
@@ -201,7 +220,7 @@
     width: 100%;
   }
 
-  /* Animation du hamburger */
+  /* Hamburger menu animation */
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: translateY(9px) rotate(45deg);
   }
